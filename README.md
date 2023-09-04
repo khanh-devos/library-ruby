@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h1><b>ENUMERABLE</b></h1>
+  <h1><b>Library</b></h1>
 
 </div>
 
@@ -30,7 +30,7 @@
 
 # 📖 Decode Morse Code <a name="about-project"></a>
 
-**ENUMERABLE** is an app to use a module inside your class. Create a class MyList and a module MyEnumerable. Your module MyEnumerable will implement a subset of the functionality of Enumerable.
+**LIBRARY** builds a library that could record what books are in the library and who borrows them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -73,7 +73,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```bash
-  git clone https://github.com/khanh-devos/decode-a-morse-msg.git 
+  git clone https://github.com/khanh-devos/libary-ruby.git 
 ```
 
 ### Install
@@ -101,11 +101,6 @@ it will install the required gemfile for running the project
 - Twitter: [@khanhror](https://twitter.com/home?lang=en)
 - LinkedIn: [Khanh RoR](https://www.linkedin.com/in/khanh-dom/)
 
-👤 **Ayomide**
-
-- GitHub: [Paulinelali](https://github.com/Paulinelali)
-- LinkedIn: [Ayomide](https://www.linkedin.com/in/ayomide-sunday-emmanuel/)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
@@ -123,7 +118,7 @@ it will install the required gemfile for running the project
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/khanh-devos/decode-a-morse-msg/issues).
+Feel free to check the [issues page](https://github.com/khanh-devos/library-ruby/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
