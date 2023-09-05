@@ -1,12 +1,12 @@
 require './nameable'
 require 'securerandom'
 
-class Person
-  include Nameable
+class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
 
   def initialize(age, name = 'Unknown', parent_permission = true) # rubocop:disable Style/OptionalBooleanParameter
+    super()
     @id = SecureRandom.hex
     @name = name
     @age = age
