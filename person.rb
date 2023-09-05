@@ -1,7 +1,8 @@
 require './nameable'
 require 'securerandom'
 
-class Person < Nameable
+class Person
+  include Nameable
   attr_reader :id
   attr_accessor :name, :age
 

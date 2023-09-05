@@ -1,6 +1,7 @@
 require './nameable'
 
-class BaseDecorator < Nameable
+module BaseDecorator 
+  include Nameable
   attr_reader :person
 
   def initialize(person)
