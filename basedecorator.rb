@@ -1,6 +1,6 @@
 require './nameable'
 
-module BaseDecorator 
+module BaseDecorator
   include Nameable
   attr_reader :person
 

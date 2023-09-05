@@ -1,14 +1,14 @@
 require './basedecorator'
 require './person'
 
-class CapitalizeDecorator 
+class CapitalizeDecorator
   include BaseDecorator
   def correct_name
     @person.correct_name.capitalize
   end
 end
 
-class TrimmerDecorator 
+class TrimmerDecorator
   include BaseDecorator
   def correct_name
     @person.correct_name.strip[0, 10]
