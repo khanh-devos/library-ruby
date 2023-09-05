@@ -11,5 +11,5 @@ class Teacher < Person
   end
 end
 
-# t1 = Teacher.new(43, 'Front-End')
-# p t1.can_use_service?
+t1 = Teacher.new(43, 'Front-End')
+p t1.can_use_service?

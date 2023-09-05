@@ -6,8 +6,7 @@ class Person
   attr_reader :id
   attr_accessor :name, :age
 
-  def initialize(age, name = 'Unknown', parent_permission: true)
-    super()
+  def initialize(age, name = 'Unknown', parent_permission = true) # rubocop:disable Style/OptionalBooleanParameter
     @id = SecureRandom.hex
     @name = name
     @age = age

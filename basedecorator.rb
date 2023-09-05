@@ -5,7 +5,6 @@ module BaseDecorator
   attr_reader :person
 
   def initialize(person)
-    super()
     @person = person
   end
 
