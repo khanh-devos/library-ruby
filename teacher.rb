@@ -1,8 +1,8 @@
 require './person'
 
 class Teacher < Person
-  def initialize(id, age, specialization, name = 'Unknown', parent_permission = true) # rubocop:disable Style/OptionalBooleanParameter
-    super(id, age, name, parent_permission)
+  def initialize(age, specialization, name = 'Unknown', parent_permission = true) # rubocop:disable Style/OptionalBooleanParameter
+    super(age, name, parent_permission)
     @specialization = specialization
   end
 
@@ -11,5 +11,5 @@ class Teacher < Person
   end
 end
 
-# t1 = Teacher.new(1, 43, 'Front-End')
+# t1 = Teacher.new(43, 'Front-End')
 # p t1.can_use_service?
