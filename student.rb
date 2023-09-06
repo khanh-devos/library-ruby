@@ -3,7 +3,7 @@ require './person'
 class Student < Person
   attr_reader :classroom
 
-  def initialize(classroom) # rubocop:disable Style/OptionalBooleanParameter
+  def initialize(classroom)
     super()
     @classroom = classroom
   end
@@ -16,5 +16,4 @@ class Student < Person
     @classroom = classroom
     classroom.students.push(self) unless classroom.students.include?(self)
   end
-
 end

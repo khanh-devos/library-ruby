@@ -1,7 +1,7 @@
 require './person'
 
 class Teacher < Person
-  def initialize(specialization) # rubocop:disable Style/OptionalBooleanParameter
+  def initialize(specialization)
     super()
     @specialization = specialization
   end
