@@ -1,15 +1,20 @@
 require './person'
 
 class Student < Person
-  def initialize(age, classroom, name = 'Unknown', parent_permission = true) # rubocop:disable Style/OptionalBooleanParameter
-    super(age, name, parent_permission)
+  attr_reader :classroom
+
+  def initialize(classroom) # rubocop:disable Style/OptionalBooleanParameter
+    super()
     @classroom = classroom
   end
 
   def play_hooky
     '¯(ツ)/¯'
   end
-end
 
-s1 = Student.new(20, 'Python', 'khnah', false)
-p s1.can_use_service?
+  def classroom=(classroom)
+    @classroom = classroom
+    classroom.students.push(self) unless classroom.students.include?(self)
+  end
+
+end

@@ -4,5 +4,3 @@ class Nameable
   end
 end
 
-# n = Nameable.new()
-# p n.correct_name
