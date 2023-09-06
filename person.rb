@@ -1,9 +1,13 @@
-class Person
+require './nameable'
+require 'securerandom'
+
+class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
 
-  def initialize(id, age, name = 'Unknown', parent_permission = true) # rubocop:disable Style/OptionalBooleanParameter
-    @id = id
+  def initialize(age, name = 'Unknown', parent_permission = true) # rubocop:disable Style/OptionalBooleanParameter
+    super()
+    @id = SecureRandom.hex
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -20,7 +24,12 @@ class Person
   def can_use_service?
     of_age? || @parent_permission
   end
+
+  def correct_name
+    @name
+  end
 end
 
-# p1 = Person.new(1, 13, 'k1', false)
-# puts p1.can_use_service?
+# p1 = Person.new(1, 13)
+# p1.name = 'kadsfhasd'
+# puts p1.name
