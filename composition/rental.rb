@@ -14,5 +14,4 @@ class Rental
     @person = person
     person.rentals << self
   end
-
 end
