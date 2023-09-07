@@ -2,12 +2,13 @@ require 'securerandom'
 require './decorators/nameable'
 
 class Person < Nameable
-  attr_reader :id
+  attr_reader :id, :type
   attr_accessor :name, :age, :parent_permission, :rentals
 
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(type, age, name = 'Unknown', parent_permission = true) # rubocop:disable Style/OptionalBooleanParameter
     super()
-    @id = SecureRandom.hex
+    @type = type
+    @id = rand(0..100)
     @name = name
     @age = age
     @parent_permission = parent_permission
