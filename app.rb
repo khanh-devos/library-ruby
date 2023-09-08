@@ -98,7 +98,7 @@ class App
       rent = Rental.new(date, book, person)
       if rent
         puts 'Rental created successfully'
-        rents << rent
+        @rents << rent
       else
         puts 'Failed to create a rent'
       end
@@ -160,6 +160,7 @@ class App
       when 6
         list_rentals
       else
+        puts "Thank you for using this app."
         break
       end
     end
