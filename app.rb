@@ -160,7 +160,7 @@ class App
       when 6
         list_rentals
       else
-        puts "Thank you for using this app."
+        puts 'Thank you for using this app.'
         break
       end
     end
