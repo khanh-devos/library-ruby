@@ -14,10 +14,11 @@ require './composition/rental'
 class App
   attr_reader :people, :books, :rents
 
-  def initialize()
+  def initialize(opt)
     @people = []
     @books = []
     @rents = []
+    @opt = [opt]
   end
 
   def create_student
@@ -128,23 +129,11 @@ class App
     end
   end
 
-  def start
-    puts
-    puts 'Please choose an option by enter a number:'
-    puts '1 - List all books'
-    puts '2 - List all people'
-    puts '3 - Create a person'
-    puts '4 - Create a book'
-    puts '5 - Create a rental'
-    puts '6 - List all rentals for a given person ID'
-    puts '7 - Exit'
 
-    gets.chomp.to_i
-  end
 
   def run # rubocop:disable Metrics/CyclomaticComplexity
     100.times do
-      opt = start
+      @opt = start
 
       case opt
       when 1
