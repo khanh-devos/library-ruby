@@ -101,6 +101,14 @@ it will install the required gemfile for running the project
 - Twitter: [@khanhror](https://twitter.com/home?lang=en)
 - LinkedIn: [Khanh RoR](https://www.linkedin.com/in/khanh-dom/)
 
+👤 Tchasinga jacques
+
+- GitHub: [@githubhandle](https://github.com/tchasinga?tab=repositories)
+- Twitter: [@twitterhandle](https://twitter.com/home)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/tchasinga-jacques-76aba7214/)
+
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->

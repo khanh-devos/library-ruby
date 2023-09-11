@@ -12,6 +12,8 @@ require './composition/classroom'
 require './composition/rental'
 require './app'
 
+# this is our main runner 
+
 def main
   app = App.new
   app.run
