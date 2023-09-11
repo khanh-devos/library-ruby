@@ -30,9 +30,16 @@ end
 
 def main
   app = App.new
-  opt = opt.new
-  app.run
-  opt.run
+
+  100.times do
+    opt = start
+    if [1, 2, 3, 4, 5, 6].include?(opt)
+      app.run(opt)
+    else
+      puts 'Thank you for using this app.'
+      break
+    end
+  end
 end
 
 main

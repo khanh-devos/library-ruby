@@ -1,24 +1,10 @@
-#!/usr/bin/env ruby
-require 'securerandom'
-
-require './teacher'
-require './student'
-require './person'
-require './decorators/basedecorator'
-require './decorators/decorators'
-require './decorators/nameable'
-require './composition/book'
-require './composition/classroom'
-require './composition/rental'
-
 class App
   attr_reader :people, :books, :rents
 
-  def initialize(opt)
+  def initialize()
     @people = []
     @books = []
     @rents = []
-    @opt = [opt]
   end
 
   def create_student
@@ -129,29 +115,20 @@ class App
     end
   end
 
-
-
-  def run # rubocop:disable Metrics/CyclomaticComplexity
-    100.times do
-      @opt = start
-
-      case opt
-      when 1
-        books.each { |b| puts "Title: \"#{b.title}\"; Author: \"#{b.author}\"" }
-      when 2
-        people.each { |per| puts "[#{per.type}] Name: #{per.name}, ID: #{per.id}, Age: #{per.age} " }
-      when 3
-        student_or_teacher
-      when 4
-        create_book
-      when 5
-        create_rent
-      when 6
-        list_rentals
-      else
-        puts 'Thank you for using this app.'
-        break
-      end
+  def run(opt) # rubocop:disable Metrics/CyclomaticComplexity
+    case opt
+    when 1
+      books.each { |b| puts "Title: \"#{b.title}\"; Author: \"#{b.author}\"" }
+    when 2
+      people.each { |per| puts "[#{per.type}] Name: #{per.name}, ID: #{per.id}, Age: #{per.age} " }
+    when 3
+      student_or_teacher
+    when 4
+      create_book
+    when 5
+      create_rent
+    when 6
+      list_rentals
     end
   end
 end
