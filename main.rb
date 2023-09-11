@@ -10,7 +10,10 @@ require './decorators/nameable'
 require './composition/book'
 require './composition/classroom'
 require './composition/rental'
-require './app'
+require './SOLID/validation'
+require './SOLID/booklist'
+require './SOLID/clientlist'
+require './SOLID/rentlist'
 
 # this is our main runner
 
@@ -28,13 +31,26 @@ def start
   gets.chomp.to_i
 end
 
-def main
-  app = App.new
+def main # rubocop:disable Metrics/MethodLength
+  books = BookList.new
+  clients = ClientList.new
+  rents = RentList.new
 
   100.times do
     opt = start
-    if [1, 2, 3, 4, 5, 6].include?(opt)
-      app.run(opt)
+    case opt
+    when 1
+      books.show
+    when 2
+      clients.show
+    when 3
+      clients.add_student_or_teacher
+    when 4
+      books.add_book
+    when 5
+      rents.add_rent(books.books, clients.people)
+    when 6
+      rents.show
     else
       puts 'Thank you for using this app.'
       break
