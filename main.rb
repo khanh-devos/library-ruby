@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require 'securerandom'
-
+require 'json'
 require './teacher'
 require './student'
 require './person'
