@@ -1,1 +1,1 @@
-["{\"@id\":78,\"@type\":\"STUDENT\",\"@name\":\"khanh\",\"@age\":21,\"@parent_permission\":false,\"@rentals\":[\"#<Rental:0x0000555815788620>\",\"#<Rental:0x000056147d0da718>\"],\"@classroom\":\"unknown\"}","{\"@id\":24,\"@type\":\"TEACHER\",\"@name\":\"John\",\"@age\":34,\"@parent_permission\":true,\"@rentals\":[],\"@specialization\":false}"]
+[]

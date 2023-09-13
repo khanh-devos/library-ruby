@@ -1,15 +1,15 @@
-require 'json';
-require_relative '../student.rb';
+require 'json'
+require_relative '../student'
 
 module SerializationArray
-  @@serializer = JSON
+  @@serializer = JSON # rubocop:disable Style/ClassVars
 
   def serialize(arr)
-    res = [] 
+    res = []
     arr.each do |item|
       res << item.serialize
     end
-    
+
     @@serializer.dump res
   end
 
@@ -19,8 +19,8 @@ module SerializationArray
 
   def write_data
     arr = take_array
-    
-    if File.exists?(file_path) then File.new(file_path) end
+
+    File.new(file_path) if File.exist?(file_path)
     file = File.open(file_path, 'w')
     seri_arr = serialize(arr)
     file.write(seri_arr)
@@ -28,21 +28,22 @@ module SerializationArray
   end
 
   def read_data
-    if File.exists?(file_path)
-      add_list un_serialize(File.read(file_path))
-    end
+    return unless File.exist?(file_path)
+
+    add_list un_serialize(File.read(file_path))
   end
 
   def un_serialize(string)
+    return [] unless string.length > 3
+
     obj = @@serializer.parse string
     arr = []
     obj.each do |item_string|
       item = create_item
       item.un_serialize(item_string)
-      
+
       arr << item
     end
     arr
   end
 end
-

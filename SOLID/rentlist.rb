@@ -26,6 +26,10 @@ class RentList
   end
 
   def add_rent(books, people)
+    if books.empty? || people.empty?
+      puts 'No book or person for renting'
+      return
+    end
     book = select_book(books)
     person = add_renter(people)
     date = date_rent
@@ -38,7 +42,7 @@ class RentList
   def show(books)
     id = @input.input_positive('ID of person:')
     @rents.each do |rent|
-      book = books.find { |book| book.id == rent.book_id }
+      book = books.find { |b| b.id == rent.book_id }
       puts "Date: #{rent.date}, Book \"#{book.title}\" by \"#{book.author}\"" if rent.person_id == id
     end
   end

@@ -56,7 +56,7 @@ class ClientList
   end
 
   def create_item
-    Person.new('','')
+    Person.new('', '')
   end
 
   def add_list(arr)

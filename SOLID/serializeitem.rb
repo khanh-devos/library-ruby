@@ -1,8 +1,8 @@
 require 'json'
 
 module SerializationItem
-  @@serializer = JSON
-  
+  @@serializer = JSON # rubocop:disable Style/ClassVars
+
   def serialize
     obj = {}
     instance_variables.map do |var|
@@ -16,6 +16,4 @@ module SerializationItem
     obj = @@serializer.parse(string)
     obj.keys.each { |key| instance_variable_set(key, obj[key]) }
   end
-
-
 end
