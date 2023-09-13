@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'securerandom'
+require 'json'
 
 require './teacher'
 require './student'
@@ -36,6 +37,10 @@ def main # rubocop:disable Metrics/MethodLength
   clients = ClientList.new
   rents = RentList.new
 
+  books.read_data
+  clients.read_data
+  rents.read_data
+
   100.times do
     opt = start
     case opt
@@ -50,8 +55,11 @@ def main # rubocop:disable Metrics/MethodLength
     when 5
       rents.add_rent(books.books, clients.people)
     when 6
-      rents.show
+      rents.show(books.books)
     else
+      books.write_data
+      clients.write_data
+      rents.write_data
       puts 'Thank you for using this app.'
       break
     end

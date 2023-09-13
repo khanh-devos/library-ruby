@@ -1,7 +1,7 @@
 class InputValidation
   private
 
-  def show_phrases(phrase)
+  def show_phrases(phrase = nil)
     print "#{phrase} "
   end
 
@@ -28,11 +28,6 @@ class InputValidation
 
   def input_yes_no(phrase)
     show_phrases(phrase)
-    gets.chomp[0, 1].downcase == 'y'
+    gets.chomp[0, 1].downcase != 'n'
   end
 end
-
-# a = InputAndValidation.new()
-# p a.inputPositiveNum('Age:')
-# p a.inputString('Name:')
-# puts a.inputYesNo('Has parent permission? [Y/N]:')

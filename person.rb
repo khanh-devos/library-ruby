@@ -1,12 +1,16 @@
 require 'securerandom'
 require './decorators/nameable'
+require './SOLID/serializeitem'
 
 class Person < Nameable
+  include SerializationItem
+
   attr_reader :id, :type
   attr_accessor :name, :age, :parent_permission, :rentals
 
   def initialize(type, age, name = 'Unknown', parent_permission = true) # rubocop:disable Style/OptionalBooleanParameter
     super()
+    @id = SecureRandom.hex
     @type = type
     @id = rand(0..100)
     @name = name

@@ -1,5 +1,12 @@
+require 'json'
+require_relative '../composition/book'
+require_relative 'validation'
+require_relative 'serializearray'
+
 class BookList
-  attr_reader :books
+  include SerializationArray
+
+  attr_accessor :books
 
   def initialize()
     @books = []
@@ -21,5 +28,18 @@ class BookList
 
   def show
     @books.each { |b| puts "Title: \"#{b.title}\"; Author: \"#{b.author}\"" }
+  end
+
+  # SERIALIZATION
+  def take_array
+    @books
+  end
+
+  def create_item
+    Book.new('', '')
+  end
+
+  def add_list(arr)
+    @books = arr
   end
 end
