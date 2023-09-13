@@ -19,7 +19,3 @@ class Book
     Rental.new(date, self, person)
   end
 end
-
-
-b1 = Book.new('book1', 'a1')
-p JSON.dump b1

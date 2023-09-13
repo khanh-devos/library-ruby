@@ -1,4 +1,4 @@
-require 'teacher'
+require_relative '../teacher'
 
 RSpec.describe Teacher do
   # Create a sample teacher object for testing
