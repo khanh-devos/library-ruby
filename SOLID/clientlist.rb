@@ -1,5 +1,6 @@
 class ClientList
-  attr_reader :people
+  include SerializationArray
+  attr_accessor :people
 
   def initialize()
     @people = []
@@ -47,5 +48,18 @@ class ClientList
 
   def show
     @people.each { |per| puts "[#{per.type}] Name: #{per.name}, ID: #{per.id}, Age: #{per.age} " }
+  end
+
+  # SERIALIZATION
+  def take_array
+    @people
+  end
+
+  def create_item
+    Person.new('','')
+  end
+
+  def add_list(arr)
+    @people = arr
   end
 end

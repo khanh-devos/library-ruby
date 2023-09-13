@@ -1,10 +1,14 @@
 require 'securerandom'
+require_relative '../SOLID/serializeitem'
 
 class Book
+  include SerializationItem
+
   attr_reader :id
   attr_accessor :title, :author, :rentals
 
   def initialize(title, author)
+    @id = SecureRandom.hex
     @title = title
     @author = author
     @rentals = []

@@ -1,5 +1,6 @@
 class RentList
-  attr_reader :rents
+  include SerializationArray
+  attr_accessor :rents
 
   def initialize
     @rents = []
@@ -34,10 +35,26 @@ class RentList
     @rents << rent
   end
 
-  def show
+  def show(books)
     id = @input.input_positive('ID of person:')
     @rents.each do |rent|
-      puts "Date: #{rent.date}, Book \"#{rent.book.title}\" by \"#{rent.book.author}\"" if rent.person.id == id
+      book = books.find { |book| book.id == rent.book_id }
+      puts "Date: #{rent.date}, Book \"#{book.title}\" by \"#{book.author}\"" if rent.person_id == id
     end
+  end
+
+  # SERIALIZATION
+  def take_array
+    @rents
+  end
+
+  def create_item
+    fakebook = Book.new('', '')
+    fakeperson = Person.new('', '')
+    Rental.new('', fakebook, fakeperson)
+  end
+
+  def add_list(arr)
+    @rents = arr
   end
 end

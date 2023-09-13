@@ -1,4 +1,5 @@
 require './person'
+require 'json'
 
 class Student < Person
   attr_reader :classroom
