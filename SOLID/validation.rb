@@ -1,13 +1,13 @@
 class InputValidation
   private
 
-  def show_phrases(phrase = nil)
+  def show_phrases(phrase)
     print "#{phrase} "
   end
 
   public
 
-  def input_positive(phrase)
+  def input_positive(phrase = nil)
     num = 0
     until num.positive?
       show_phrases(phrase)
@@ -17,7 +17,7 @@ class InputValidation
     num
   end
 
-  def input_string(phrase)
+  def input_string(phrase = nil)
     str = ''
     until str.strip.length.positive?
       show_phrases(phrase)
@@ -26,7 +26,7 @@ class InputValidation
     str
   end
 
-  def input_yes_no(phrase)
+  def input_yes_no(phrase = nil)
     show_phrases(phrase)
     gets.chomp[0, 1].downcase != 'n'
   end

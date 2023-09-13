@@ -1,5 +1,6 @@
 require 'securerandom'
 require_relative '../SOLID/serializeitem'
+require 'json'
 
 class Book
   include SerializationItem
@@ -18,3 +19,7 @@ class Book
     Rental.new(date, self, person)
   end
 end
+
+
+b1 = Book.new('book1', 'a1')
+p JSON.dump b1
