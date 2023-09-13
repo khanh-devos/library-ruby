@@ -8,14 +8,14 @@ class RentList
   end
 
   def select_book(books)
-    puts 'Select a book from the following list by number'
+    puts 'Select a book from the following list by number:'
     books.each_with_index { |b, i| puts "#{i + 1}) Title: #{b.title}, Author: #{b.author}" }
     id = @input.input_positive('')
     books[id - 1]
   end
 
   def add_renter(people)
-    puts 'Select a person from the following list by number (not id)'
+    puts 'Select a person from the following list by number (not id):'
     people.each_with_index { |per, i| puts "#{i + 1}) [#{per.type}] Name: #{per.name}, ID: #{per.id}, Age: #{per.age}" }
     id = @input.input_positive('')
     people[id - 1]
@@ -27,9 +27,10 @@ class RentList
 
   def add_rent(books, people)
     if books.empty? || people.empty?
-      puts 'No book or person for renting'
+      puts 'No books or people for renting'
       return
     end
+
     book = select_book(books)
     person = add_renter(people)
     date = date_rent
@@ -40,7 +41,7 @@ class RentList
   end
 
   def show(books)
-    id = @input.input_positive('ID of person:')
+    id = @input.input_positive('Enter the ID of the person:')
     @rents.each do |rent|
       book = books.find { |b| b.id == rent.book_id }
       puts "Date: #{rent.date}, Book \"#{book.title}\" by \"#{book.author}\"" if rent.person_id == id
