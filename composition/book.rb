@@ -1,5 +1,6 @@
 require 'securerandom'
 require_relative '../SOLID/serializeitem'
+require 'json'
 
 class Book
   include SerializationItem

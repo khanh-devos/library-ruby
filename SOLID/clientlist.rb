@@ -37,7 +37,7 @@ class ClientList
 
   def add_student_or_teacher
     print 'Do u wanna create a student(1) or teacher(2)? [Input the number]: '
-    opt3 = @input.input_positive('')
+    opt3 = @input.input_positive
     case opt3
     when 1
       add_student
